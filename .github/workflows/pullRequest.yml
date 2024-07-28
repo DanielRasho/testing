@@ -16,7 +16,7 @@ jobs:
         run: docker compose -f "compose.test.yaml" up -d --build
 
       - name: owo
-        run: curl -X GET http://127.0.0.1:3002/ -v
+        run: sleep 5 && curl -X GET http://127.0.0.1:3002/ -v
 
       - name: Install node
         uses: actions/setup-node@v4
