@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
-// const setupSwagger = require('./docs/swaggerConfig')
+const setupSwagger = require('./docs/swaggerConfig')
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms))
