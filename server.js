@@ -13,7 +13,7 @@ async function main() {
   app.use(cors())
 
   // Swagger setup
-  // setupSwagger(app)
+  setupSwagger(app)
 
   // Import Routes
   const userRoutes = require('./routes/userRoutes')
