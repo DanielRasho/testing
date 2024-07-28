@@ -7,7 +7,7 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
 async function main() {
-  await sleep(process.env.DELAY_START)
+  // await sleep(process.env.DELAY_START)
   const app = express()
   app.use(express.json())
   app.use(cors())

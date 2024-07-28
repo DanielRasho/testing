@@ -28,7 +28,7 @@ jobs:
         run: docker compose -f "compose.test.yaml" up -d --build
 
       - name: owo
-        run: sleep 5 && curl -X GET http://localhost:3001/health -v
+        run: sleep 10 && curl -X GET http://localhost:3001/health -v
 
       - name: Stop containers
         if: always()
