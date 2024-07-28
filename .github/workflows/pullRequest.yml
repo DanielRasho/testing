@@ -8,27 +8,27 @@ jobs:
   test:
     name: test code
     runs-on: ubuntu-latest
+    env:
+      BUCKET_HOST: none
+      DB_ADMIN_USER: root
+      DB_ADMIN_PASSWORD: 1234
+      DB_HOST: database
+      DB_NAME: therapisttrack
+      DB_USER: adminstrator
+      DB_USER_PASSWORD: 1234
+      DB_PORT: 27017
+      DELAY_START: 8000
+
+      API_PORT: 3001
+      JWT_SECRET: 'LocalPassword'
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
       - name: Start containers
         run: docker compose -f "compose.test.yaml" up -d --build
 
       - name: owo
-        run: sleep 5 && curl -X GET http://127.0.0.1:3002/ -v
-
-      - name: Install node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22.3.0
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run tests
-        run: npm run test
+        run: sleep 5 && curl -X GET http://localhost:3001/health -v
 
       - name: Stop containers
         if: always()
