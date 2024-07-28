@@ -28,7 +28,11 @@ jobs:
         run: docker compose -f "compose.test.yaml" up -d --build
 
       - name: owo
-        run: sleep 10 && curl -X GET http://localhost:3001/health -v
+        run: |
+          while ! curl -s http://localhost:8000 > /dev/null; do
+            echo "Waiting for server..."
+            sleep 5
+          done
 
       - name: Stop containers
         if: always()
