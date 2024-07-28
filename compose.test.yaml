@@ -1,0 +1,14 @@
+name: therapisttrack-backend-test
+
+services:
+  backend:
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - '3002:3002'
+    volumes:
+      - node_modules:/backend/node_modules
+
+volumes:
+  node_modules:
+    driver: local
