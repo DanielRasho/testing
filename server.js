@@ -16,9 +16,9 @@ async function main() {
   // setupSwagger(app)
 
   // Import Routes
-  // jconst userRoutes = require('./routes/userRoutes')
-  // const fileRoutes = require('./routes/fileRoutes')
-  // const authRoutes = require('./routes/authRoutes')
+  const userRoutes = require('./routes/userRoutes')
+  const fileRoutes = require('./routes/fileRoutes')
+  const authRoutes = require('./routes/authRoutes')
 
   // Use Routes
   // app.use('/users', userRoutes)
